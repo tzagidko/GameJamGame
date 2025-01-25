@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/AlexBlockLevel.unity
+    guid: 93ead8399893e3a40829fb9f08c124c0
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 2c6d74ac3c7f5ed4280a82d209bab0a5
   m_configObjects: {}
