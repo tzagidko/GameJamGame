@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
 {
     private PhotonView PV;
     private GameObject controller;
-
+    private Vector3 spawnPoint;
     private void Awake()
     {
         PV = GetComponent<PhotonView>();
@@ -17,6 +17,9 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnPoint.x = 11;
+        spawnPoint.y = 3;
+        spawnPoint.z = -17;
         if (PV.IsMine)
         {
             CreateController();
@@ -27,7 +30,7 @@ public class PlayerManager : MonoBehaviour
 
     void CreateController()
     {
-       controller= PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), Vector3.zero, Quaternion.identity, 0, new object[]{PV.ViewID});
+       controller= PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), spawnPoint, Quaternion.identity, 0, new object[]{PV.ViewID});
     }
 
     public void Die()
