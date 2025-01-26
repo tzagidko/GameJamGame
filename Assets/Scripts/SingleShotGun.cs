@@ -10,6 +10,8 @@ public  class SingleShotGun : Gun
     [SerializeField] private Camera cam;
     private PhotonView PV;
     [SerializeField] private GameObject bubblesPrefab;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootSound;
 
     private void Awake()
     {
@@ -23,7 +25,12 @@ public  class SingleShotGun : Gun
 
    void Shoot()
    {
-       Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+        if (audioSource != null && shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
+
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
        ray.origin = cam.transform.position;
        if (Physics.Raycast(ray, out RaycastHit hit))
        {
