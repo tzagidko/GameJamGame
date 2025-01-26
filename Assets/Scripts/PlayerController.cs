@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
   [SerializeField] private GameObject cameraHolder;
   [SerializeField] private float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
   [SerializeField] private Item[] items;
+  [SerializeField] private AudioClip deathSound; 
+  private AudioSource audioSource; 
   private int itemIndex;
   private int previousItemIndex=-1;
   private bool grounded;
@@ -180,7 +182,13 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
   }
 
   void Die()
+
   {
-    playerManager.Die();
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+
+        playerManager.Die();
   }
 }

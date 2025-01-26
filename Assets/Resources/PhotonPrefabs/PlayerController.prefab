@@ -1167,7 +1167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1251831109723250456
 Transform:
   m_ObjectHideFlags: 0
@@ -1392,6 +1392,7 @@ MonoBehaviour:
   items:
   - {fileID: 3412726781069625496}
   - {fileID: 7129665208725912673}
+  deathSound: {fileID: 8300000, guid: 2816fbd3fe793a14da358ed3189c94e2, type: 3}
 --- !u!54 &1543029217703813506
 Rigidbody:
   m_ObjectHideFlags: 0
