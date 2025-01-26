@@ -945,7 +945,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8943933862260207949}
-  - {fileID: 6444166415261902119}
   m_Father: {fileID: 5837072812203858608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7129665208725912673
@@ -965,7 +964,7 @@ MonoBehaviour:
   bulletImpactPrefab: {fileID: 4536423449639770055, guid: 1febd01a06d6e474c8c7b8d75fd9afd6, type: 3}
   cam: {fileID: 3606687461380403670}
   bubblesPrefab: {fileID: 1302045184681056, guid: d7689380619fd894c8508730e2bed11f, type: 3}
-  audioSource: {fileID: 771810827933262350}
+  audioSource: {fileID: 0}
   shootSound: {fileID: 8300000, guid: 8e37ee2395804334e9259cdb6afa7647, type: 3}
 --- !u!114 &2369552722124725257
 MonoBehaviour:
