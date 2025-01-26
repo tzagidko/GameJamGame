@@ -25,7 +25,7 @@ public class ScoreboardItem : MonoBehaviourPunCallbacks
         {
             killsText.text = kills.ToString();
         }
-        if (player.CustomProperties.TryGetValue("death", out object deaths))
+        if (player.CustomProperties.TryGetValue("deaths", out object deaths))
         {
             deathsText.text = deaths.ToString();
         }
