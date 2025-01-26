@@ -12,7 +12,8 @@ public  class SingleShotGun : Gun
     [SerializeField] private GameObject bubblesPrefab;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip shootSound;
-
+     [SerializeField] Transform bubbleSpawnPoint;
+  
     private void Awake()
     {
         PV = GetComponent<PhotonView>();
@@ -46,7 +47,7 @@ public  class SingleShotGun : Gun
        if (colliders.Length != 0)
        {
            GameObject bulletImpactObj=Instantiate(bulletImpactPrefab, hitPosition, Quaternion.LookRotation(hitNormal,Vector3.up)*bulletImpactPrefab.transform.rotation);
-           GameObject bubblesObj = Instantiate(bubblesPrefab, ItemGameObject.transform.position, ItemGameObject.transform.rotation);
+           GameObject bubblesObj = Instantiate(bubblesPrefab, bubbleSpawnPoint.transform.position, cam.transform.rotation);
            bubblesObj.transform.SetParent(ItemGameObject.transform);
            Destroy(bulletImpactObj,10f);
            Destroy(bubblesObj,1.2f);
